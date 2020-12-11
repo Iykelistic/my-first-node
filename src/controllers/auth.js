@@ -1,8 +1,10 @@
 import { validationResult } from 'express-validator';
-import bcrypt, { hashSync } from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import sgMail from '@sendgrid/mail';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import db from '../dbconnection';
 
 dotenv.config();
