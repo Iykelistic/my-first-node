@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import router from './routes';
 import './cloudinary';
+import { hostname } from 'os';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,8 +29,8 @@ app.all('*', (req, res) => {
     })
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(port, hostname, () => {
+    console.log(`Server running at ${hostname} on port ${port}`);
 });
 
 // const http = require('http');
