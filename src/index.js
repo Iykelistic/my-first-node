@@ -1,12 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import cors from 'cors';
 import router from './routes';
 import './cloudinary';
 import { hostname } from 'os';
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
